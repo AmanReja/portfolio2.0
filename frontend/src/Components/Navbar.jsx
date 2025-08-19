@@ -81,29 +81,29 @@ function Navbar({ themeHandel }) {
         </button>
         <div
           className={
-            "max-w-[334px] sm:max-w-screen-xl flex flex-wrap rounded-[10px] items-center w-[500px] bg-white  justify-center mx-auto p-4 transition-all duration-300"
+            "max-w-[334px] sm:max-w-screen-xl  flex flex-wrap rounded-[10px] items-center w-[500px] bg-white  justify-center mx-auto p-4 transition-all duration-300"
           }
         >
           <div
             onClick={handelopen}
-            className={`bg-lime-400 py-[3px] px-[2px] rounded flex sm:hidden flex-col  h-[30px] transition-all 
+            className={`py-[3px] px-[2px] rounded flex sm:hidden flex-col  h-[30px] transition-all 
              gap[9px] left-[-134px] relative items-center justify-between`}
           >
             <div
               className={
                 open
-                  ? "bg-white w-[30px] h-[2px]  duration-300"
-                  : "bg-white w-[30px] h-[2px] rotate-45 relative top-[15px]  duration-300"
+                  ? "bg-black w-[30px] h-[2px]  duration-300"
+                  : "bg-black w-[30px] h-[2px] rotate-45 relative top-[15px]  duration-300"
               }
             ></div>
             <div
-              className={open ? "bg-white w-[30px] h-[2px]" : "invisible"}
+              className={open ? "bg-black w-[30px] h-[2px]" : "invisible"}
             ></div>
             <div
               className={
                 open
-                  ? "bg-white w-[30px] h-[2px]  duration-300"
-                  : "bg-white w-[30px] h-[2px] -rotate-45 relative bottom-[15px] duration-300"
+                  ? "bg-black w-[30px] h-[2px]  duration-300"
+                  : "bg-black w-[30px] h-[2px] -rotate-45 relative bottom-[15px] duration-300"
               }
             ></div>
           </div>
@@ -156,8 +156,7 @@ function Navbar({ themeHandel }) {
                   onClick={() => {
                     setOpen(true);
                   }}
-                  to="/contactus"
-                  href="#"
+                  href="#contact"
                   className={`block py-2 px-3  hover:text-sky-600 duration-300 `}
                 >
                   Contact me

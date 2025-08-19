@@ -11,8 +11,15 @@ import text from "../assets/images/Project images/text.png";
 import wal from "../assets/images/Project images/wal.png";
 import jel from "../assets/images/Project images/jewl.png";
 
+import blog from "../assets/images/Project images/post.png";
+
 import travel from "../assets/images/Project images/travel.png";
 import task from "../assets/images/Project images/task.png";
+import gym from "../assets/images/Project images/gym.png";
+import jew from "../assets/images/Project images/jew.png";
+import spa from "../assets/images/Project images/spa.png";
+import japp from "../assets/images/Project images/japp.png";
+import { Fade } from "react-awesome-reveal";
 
 const Card = () => {
   const project = [
@@ -20,48 +27,96 @@ const Card = () => {
       name: "Book Shop",
       img: book,
       wlink: "https://front-book-mu.vercel.app/",
+      islive: "live",
+      dir: "left",
+    },
+    {
+      name: "Blog post(Redux+Next.js)",
+      img: blog,
+      wlink: "https://mini-blog-frontend-96lc.vercel.app/",
+      islive: "live",
+      dir: "down",
     },
     {
       name: "Wallpaper Downloader",
       img: wal,
       wlink: "https://wallpaperapp-w8f3.vercel.app/",
+      islive: "live",
+      dir: "up",
     },
     {
       name: "Travelia(working)",
       img: travel,
       wlink: "https://travel-frontend-delta-steel.vercel.app/",
-    },
-    {
-      name: "Gaming website",
-      img: game,
-      wlink: "https://gaming-website-one.vercel.app/",
+      islive: "live",
+      dir: "right",
     },
 
     {
       name: "Get recipes",
       img: recipe,
       wlink: "https://recipe-api-lyart.vercel.app/",
+      islive: "live",
+      dir: "down",
     },
     {
       name: "Tictacto",
       img: tictac,
       wlink: "https://tic-tac-to-xi.vercel.app/",
+      islive: "live",
+      dir: "right",
     },
     {
       name: "Todo List",
       img: todo,
       wlink: "https://todu-list-ten.vercel.app/",
+      islive: "live",
+      dir: "left",
     },
     {
       name: "Calculator",
       img: cal,
       wlink: "https://calculator2-0-vert.vercel.app/",
+      islive: "live",
+      dir: "right",
     },
 
     {
       name: "Task Master",
       img: task,
       wlink: "https://task-frontend-three-liard.vercel.app/",
+      islive: "live",
+      dir: "left",
+    },
+
+    {
+      name: "Gym website(CMS)",
+      img: gym,
+      wlink: "#",
+      islive: "not hosted",
+      dir: "left",
+    },
+
+    {
+      name: "jewelary website(CMS)",
+      img: jew,
+      wlink: "#",
+      islive: "not hosted",
+      dir: "left",
+    },
+    {
+      name: "Spa(CMS)",
+      img: spa,
+      wlink: "#",
+      islive: "not hosted",
+      dir: "up",
+    },
+    {
+      name: "jewelary App",
+      img: japp,
+      wlink: "#",
+      islive: "not hosted",
+      dir: "right",
     },
     // {
     //   name: "jewelary App",
@@ -78,11 +133,6 @@ const Card = () => {
     //   img: Mark,
     //   wlink: "",
     // },
-    // {
-    //   name: "Blog post(Redux)",
-    //   img: Blog,
-    //   wlink: "",
-    // },
   ];
 
   return (
@@ -92,52 +142,30 @@ const Card = () => {
       </div>
       <section
         id="Projects"
-        className="w-full gap-[50px] px-[30px] flex-wrap flex flex-row justify-between"
+        className="w-full gap-[50px] sm:px-[30px] px-[80px] flex-wrap flex flex-row justify-center"
       >
         {project.map((item) => (
-          <div className="w-82  bg-gradient-to-l from-[#f5365c] to-[#fb6340] shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <a href="#">
+          <Fade direction={item.dir}>
+            <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl sm:w-[400px] w-[350px] px-8 pb-8 pt-40 mt-24 shadow-lg hover:scale-105 transition-all duration-300">
               <img
                 src={item.img}
-                alt="Product"
-                className="h-50 w-full object-fit rounded-t-xl"
+                alt={item.name}
+                className="absolute inset-0 h-full w-full object-cover"
               />
-              <div className="px-4 py-3 w-72">
-                <span className="text-gray-400 mr-3 uppercase text-xs">
-                  Brand
-                </span>
-                <p className="text-lg font-bold text-black truncate block capitalize">
-                  Product Name
-                </p>
-                <div className="flex items-center">
-                  <p className="text-lg font-semibold text-black cursor-auto my-3">
-                    $149
-                  </p>
-                  <del>
-                    <p className="text-sm text-gray-600 cursor-auto ml-2">
-                      $199
-                    </p>
-                  </del>
-                  <div className="ml-auto">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={20}
-                      height={20}
-                      fill="currentColor"
-                      className="bi bi-bag-plus"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
-                      />
-                      <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
+              <a
+                className="z-10 text-2xl font-bold text-white hover:underline transition"
+                href={item.wlink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.name}
+              </a>
+
+              <div className="z-10 text-sm text-gray-300">{item.islive}</div>
+            </article>
+          </Fade>
         ))}
       </section>
     </div>
